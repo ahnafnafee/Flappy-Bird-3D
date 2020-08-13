@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FlappyControl : MonoBehaviour
 {
-    public GameManager gameManager;
+    public Dissolve gameManager;
     public float speed = 5.0f;
     // Implement gravity
     public float gravity = 1.0f;
@@ -13,7 +13,7 @@ public class FlappyControl : MonoBehaviour
 
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    
+
     private Rigidbody _rb;
     
     // Start is called before the first frame update
@@ -28,27 +28,19 @@ public class FlappyControl : MonoBehaviour
         var transformVar = transform;
         transformVar.position = transformVar.position + Vector3.down * (Time.deltaTime * speed);
         // v = u + at
-        speed = speed + gravity * Time.deltaTime;
+        
+        speed = speed + gravity * (fallMultiplier - 1) * Time.deltaTime;
     
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            speed = -flapSpeed;
+            speed = -flapSpeed * (lowJumpMultiplier - 1);
         }
     }
-
-    // private void FixedUpdate()
-    // {
-    //     if (_rb.velocity.z < 0)
-    //     {
-    //         _rb.velocity += Vector3.up * (Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
-    //     } else if (_rb.velocity.z > 0 && !Input.GetButton("Jump"))
-    //     {
-    //         _rb.velocity += Vector3.up * (Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
-    //     }
-    // }
-
     public void OnCollisionEnter(Collision other)
     {
+        speed = 0f;
+        flapSpeed = 0f;
+        
         Debug.Log("I'm colliding");
         gameManager.GameOver();
     }
