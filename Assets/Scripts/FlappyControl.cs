@@ -38,6 +38,10 @@ public class FlappyControl : MonoBehaviour
     }
     public void OnCollisionEnter(Collision other)
     {
+        if (other.collider.CompareTag("Floor"))
+        {
+            gravity = 0f;
+        }
         speed = 0f;
         flapSpeed = 0f;
         
