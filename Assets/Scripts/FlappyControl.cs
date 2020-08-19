@@ -14,6 +14,10 @@ public class FlappyControl : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    private int _hitNo = 0;
+    
+    [FMODUnity.EventRef] public string hitSound, jumpSound;
+
     private Rigidbody _rb;
     
     // Start is called before the first frame update
@@ -33,19 +37,25 @@ public class FlappyControl : MonoBehaviour
     
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            FMODUnity.RuntimeManager.PlayOneShot(jumpSound);
             speed = -flapSpeed * (lowJumpMultiplier - 1);
         }
     }
     public void OnCollisionEnter(Collision other)
     {
+        _hitNo++;
         if (other.collider.CompareTag("Floor"))
         {
             gravity = 0f;
         }
         speed = 0f;
         flapSpeed = 0f;
-        
+
         Debug.Log("I'm colliding");
-        gameManager.GameOver();
+        if (_hitNo == 1)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(hitSound);
+            gameManager.GameOver();
+        }
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{6d7b3775-c939-46a5-9f22-d25b6b9ee4ca}">
+		<property name="assetPath">
+			<value>sfx_die.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.75609977324263034</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3d49ff6e-b757-4569-b026-ba353b27d8cb}</destination>
+		</relationship>
+	</object>
+</objects>
