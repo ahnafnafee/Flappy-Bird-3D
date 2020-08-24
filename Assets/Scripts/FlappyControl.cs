@@ -51,7 +51,7 @@ public class FlappyControl : MonoBehaviour
         speed = 0f;
         flapSpeed = 0f;
 
-        Debug.Log("I'm colliding");
+        // Debug.Log("I'm colliding");
         if (_hitNo == 1)
         {
             FMODUnity.RuntimeManager.PlayOneShot(hitSound);

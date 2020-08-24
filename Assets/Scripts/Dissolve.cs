@@ -17,19 +17,10 @@ public class Dissolve : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Debug.Log(Time.deltaTime);
-        // _currentValue = _rend.material.GetFloat(TransparencyLevel);
-        // _rend.material.SetFloat(TransparencyLevel, Mathf.Lerp(_currentValue, _transparencyLevel, Time.deltaTime));
-
-    }
-
     IEnumerator DoFadeOut()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("TIME STOPPED");
+        // Debug.Log("TIME STOPPED");
         Destroy(bird);
         Time.timeScale = 0;
     }
