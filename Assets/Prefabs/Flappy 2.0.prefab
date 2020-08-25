@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7071085341250876180}
   - component: {fileID: 7071085341250876177}
   - component: {fileID: 7071085341250876176}
+  - component: {fileID: 992862398}
+  - component: {fileID: 992862399}
   m_Layer: 0
   m_Name: Flappy 2.0
   m_TagString: Untagged
@@ -64,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf34b51b1b99444488bd877b7c310630, type: 2}
+  - {fileID: 2100000, guid: d673ec250bb326e4eb4dcf8851652d84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,9 +133,11 @@ MonoBehaviour:
   gameManager: {fileID: 7071085341250876176}
   speed: 0
   gravity: 10
-  flapSpeed: 6
+  flapSpeed: 5.5
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+  hitSound: event:/sfx_hit
+  jumpSound: event:/sfx_swooshing
 --- !u!114 &7071085341250876177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,5 +164,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
-  anim: {fileID: 0}
+  bird: {fileID: 7071085341250876181}
+  anim: {fileID: 992862398}
   ground: {fileID: 0}
+--- !u!95 &992862398
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071085341250876181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 951250416506aab49b17a7ad7cb299a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &992862399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071085341250876181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Photographs
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

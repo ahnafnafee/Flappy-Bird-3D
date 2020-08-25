@@ -30,6 +30,7 @@ public class Dissolve : MonoBehaviour
         
         anim.SetTrigger("die");
         ground.enabled = false;
+        // Instantiate(gameOverCanvas);
         gameOverCanvas.SetActive(true);
         StartCoroutine(DoFadeOut());
     }
