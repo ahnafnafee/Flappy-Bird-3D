@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Offline.unity
+    guid: c663ab0b3b3aa4f47af5338ea05dd763
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 5eefee3bba9ac9d469d6e02c815e8e5d
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Mirror/Examples/Pong/Scenes/Scene.unity
-    guid: 89a84548859e3b643b4fb27984dc2b0d
-  - enabled: 1
-    path: Assets/Scenes/New Scene.unity
-    guid: 71f43c28eaa3a9e4495f3384a8701577
   m_configObjects: {}
