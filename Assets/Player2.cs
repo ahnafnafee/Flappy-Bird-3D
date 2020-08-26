@@ -21,7 +21,7 @@ public class Player2 : NetworkBehaviour
             return;
         }
         
-        if (!Input.GetKeyDown(KeyCode.Space))
+        if (!Input.GetKeyDown(KeyCode.A))
         {
             return;
         }

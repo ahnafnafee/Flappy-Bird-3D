@@ -385,8 +385,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 320297545}
-  - component: {fileID: 320297543}
   - component: {fileID: 320297542}
+  - component: {fileID: 320297543}
+  - component: {fileID: 320297544}
   m_Layer: 0
   m_Name: Network Manager
   m_TagString: Untagged
@@ -445,7 +446,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 320297541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4d0de790c42e54ca3f16dc576c4955, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
@@ -454,26 +455,33 @@ MonoBehaviour:
   showDebugMessages: 0
   serverTickRate: 30
   offlineScene: 
-  onlineScene: Assets/Scenes/New Scene.unity
+  onlineScene: 
   transport: {fileID: 320297542}
   networkAddress: localhost
   maxConnections: 4
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 8812758309844024392, guid: 6a79acce54631f940a7e8de09a239a7f,
+  playerPrefab: {fileID: 3073825717063429553, guid: 1cd9df1e203978b4ca63c4738aa3fe36,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
-  minPlayers: 2
-  menuScene: 
-  numberOfRounds: 1
-  mapSet: {fileID: 0}
-  roomPlayerPrefab: {fileID: 0}
-  gamePlayerPrefab: {fileID: 0}
-  playerSpawnSystem: {fileID: 0}
-  roundSystem: {fileID: 0}
+--- !u!114 &320297544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320297541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0
 --- !u!4 &320297545
 Transform:
   m_ObjectHideFlags: 0
@@ -766,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &14880380431430834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,8 +787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cb1986a05fbe449ac5e997640a7868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkManager: {fileID: 0}
-  landingPagePanel: {fileID: 0}
 --- !u!4 &14880380431430846
 Transform:
   m_ObjectHideFlags: 0

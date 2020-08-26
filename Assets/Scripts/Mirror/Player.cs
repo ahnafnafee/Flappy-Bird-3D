@@ -33,13 +33,13 @@ public class Player : NetworkBehaviour
         _matchID = matchID;
         if (MatchMaker.instance.HostGame(matchID, gameObject))
         {
-            Debug.Log("<color = green>Game hosted successfully</color>");
+            Debug.Log("<color=green>Game hosted successfully</color>");
             // networkMatchChecker.matchId = matchID.ToGuid();
             TargetHostGame(true, matchID);
         }
         else
         {
-            Debug.Log($"<color = red>Game hosted failed</color>");
+            Debug.Log($"<color=red>Game hosted failed</color>");
             TargetHostGame(false, matchID);
         }
     }
