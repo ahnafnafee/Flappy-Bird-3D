@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,12 +20,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Space) && active)
-        // {
-        //     mainMenu.SetActive(false);
-        //     Time.timeScale = 1;
-        //     active = false;
-        // }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void GameOver()
